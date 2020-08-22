@@ -1,3 +1,4 @@
+include ':commoms'
 include ':marvelsdk'
 include ':app'
 rootProject.name='My Application'
