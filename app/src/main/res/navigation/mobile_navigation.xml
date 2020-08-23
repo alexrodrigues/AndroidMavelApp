@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_characters"
-        android:name="com.example.marvelapp.features.home.fragments.characters.CharactersFragment"
+        android:name="com.example.marvelapp.features.home.fragments.characters.presentation.CharactersFragment"
         android:label="@string/title_activity_home"
         tools:layout="@layout/fragment_characters" />
 

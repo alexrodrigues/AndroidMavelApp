@@ -1,4 +1,4 @@
-package com.example.marvelsdk.network.security
+package com.example.marvelsdk.di.security
 
 import com.rodriguesalex.commoms.extensions.md5
 import java.util.*

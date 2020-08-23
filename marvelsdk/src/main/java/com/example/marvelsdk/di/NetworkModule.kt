@@ -1,6 +1,6 @@
 package com.example.marvelsdk.di
 
-import com.example.marvelsdk.network.interceptor.MarvelInterceptor
+import com.example.marvelsdk.di.interceptor.MarvelInterceptor
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
