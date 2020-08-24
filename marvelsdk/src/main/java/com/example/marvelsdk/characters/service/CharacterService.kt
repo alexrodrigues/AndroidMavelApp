@@ -8,5 +8,4 @@ interface CharacterService {
 
     @GET("/character")
     fun fetchCharacters(limit: Int): Single<MarvelCharacterResponse>
-
 }

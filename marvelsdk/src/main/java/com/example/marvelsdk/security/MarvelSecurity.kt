@@ -1,8 +1,7 @@
 package com.example.marvelsdk.security
 
 import com.rodriguesalex.commoms.extensions.md5
-import java.util.*
-
+import java.util.Date
 
 class MarvelSecurity {
 

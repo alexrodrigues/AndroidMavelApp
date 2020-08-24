@@ -6,7 +6,7 @@ import com.example.marvelsdk.security.MarvelSecurity.Companion.timestamp
 import okhttp3.Interceptor
 import okhttp3.Response
 
-class MarvelInterceptor: Interceptor {
+class MarvelInterceptor : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
 
@@ -19,9 +19,6 @@ class MarvelInterceptor: Interceptor {
             .addQueryParameter("hash", MarvelSecurity.hash())
             .build()
 
-
         return chain.proceed(request)
     }
-
-
 }

@@ -11,7 +11,7 @@ interface CharactersRepository {
 
 class CharactersRepositoryImpl @Inject constructor(
     private val service: CharacterService
-): CharactersRepository {
+) : CharactersRepository {
 
     override fun fetchCharacters() =
         service.fetchCharacters(LIMIT)

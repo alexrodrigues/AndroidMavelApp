@@ -14,7 +14,6 @@ abstract class MarvelSdkModule {
     @Binds
     abstract fun provideCharactersRepository(repositoryImpl: CharactersRepositoryImpl): CharactersRepository
 
-
     companion object {
 
         @Provides
