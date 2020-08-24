@@ -1,4 +1,4 @@
-package com.example.marvelsdk.di
+package com.example.marvelsdk.di.network
 
 import com.example.marvelsdk.di.interceptor.MarvelInterceptor
 import dagger.Module
@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 @Module
-class NetworkModule {
+internal class NetworkModule {
 
     private val TIMEOUT = 60L
     private val BASEURL = "https://gateway.marvel.com:443/v1/public/"

@@ -1,8 +1,8 @@
 package com.example.marvelsdk.di.interceptor
 
-import com.example.marvelsdk.di.security.MarvelSecurity
-import com.example.marvelsdk.di.security.MarvelSecurity.Companion.PUBLIC_KEY
-import com.example.marvelsdk.di.security.MarvelSecurity.Companion.timestamp
+import com.example.marvelsdk.security.MarvelSecurity
+import com.example.marvelsdk.security.MarvelSecurity.Companion.PUBLIC_KEY
+import com.example.marvelsdk.security.MarvelSecurity.Companion.timestamp
 import okhttp3.Interceptor
 import okhttp3.Response
 

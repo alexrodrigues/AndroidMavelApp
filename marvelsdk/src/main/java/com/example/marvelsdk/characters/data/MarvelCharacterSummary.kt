@@ -4,6 +4,6 @@ import com.google.gson.annotations.SerializedName
 
 data class MarvelCharacterSummary (
     @SerializedName("I") val identifier: Int? = null,
-    @SerializedName("I") var someName: String? = null,
-    var items: List<MarvelItem>? = null
+    @SerializedName("I") val someName: String? = null,
+    val items: List<MarvelItem>? = null
 )
