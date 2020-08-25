@@ -2,7 +2,6 @@ package com.example.marvelapp.features.home.container
 
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import com.example.marvelapp.R
 import com.example.marvelsdk.characters.CharactersRepository
 import com.rodriguesalex.commoms.di.AppSchedulers
@@ -34,7 +33,6 @@ class HomeActivity : DaggerAppCompatActivity() {
                     Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
                 })
         )
-
     }
 
     override fun onPause() {
