@@ -5,6 +5,7 @@ import com.example.marvelapp.MarvelApplication
 import com.example.marvelapp.di.module.ActivityBuilderModule
 import com.example.marvelapp.di.module.AppModule
 import com.example.marvelapp.di.module.FragmentBuilderModule
+import com.example.marvelsdk.di.MarvelSdkModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -16,7 +17,9 @@ import javax.inject.Singleton
     AndroidSupportInjectionModule::class,
     AppModule::class,
     ActivityBuilderModule::class,
-    FragmentBuilderModule::class])
+    FragmentBuilderModule::class,
+    MarvelSdkModule::class
+])
 interface AppComponent : AndroidInjector<MarvelApplication> {
 
     @Component.Builder

@@ -1,5 +1,6 @@
 package com.example.marvelsdk.di.network
 
+import com.example.marvelsdk.characters.service.CharacterService
 import com.example.marvelsdk.di.interceptor.MarvelInterceptor
 import dagger.Module
 import dagger.Provides
@@ -31,13 +32,20 @@ internal class NetworkModule {
     @Provides
     fun provideGSON(): GsonConverterFactory = GsonConverterFactory.create()
 
+    @Provides
+    @Singleton
+    fun provideCharacterService(retrofit: Retrofit): CharacterService =
+        retrofit.create(CharacterService::class.java)
+
     @Singleton
     @Provides
-    fun provideRetrofit(gsonConverterFactory: GsonConverterFactory, okHttpClient: OkHttpClient) =
+    fun provideRetrofit(gsonConverterFactory: GsonConverterFactory, okHttpClient: OkHttpClient):
+            Retrofit =
         Retrofit.Builder()
             .baseUrl(BASEURL)
             .addConverterFactory(gsonConverterFactory)
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(okHttpClient)
             .build()
+
 }

@@ -10,15 +10,20 @@ class MarvelInterceptor : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
 
-        val request = chain.request()
+        val tempRequest = chain.request()
 
-        request.url()
+        val url = tempRequest.url()
             .newBuilder()
-            .addQueryParameter("apikey", PUBLIC_KEY)
-            .addQueryParameter("ts", timestamp)
-            .addQueryParameter("hash", MarvelSecurity.hash())
+            .apply {
+                addQueryParameter("apikey", PUBLIC_KEY)
+                addQueryParameter("ts", timestamp)
+                addQueryParameter("hash", MarvelSecurity.hash())
+            }
             .build()
 
-        return chain.proceed(request)
+        val newBuilder = tempRequest.newBuilder().url(url)
+        val finalRequsst = newBuilder.build()
+
+        return chain.proceed(finalRequsst)
     }
 }
