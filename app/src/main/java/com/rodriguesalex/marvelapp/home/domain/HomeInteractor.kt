@@ -1,4 +1,4 @@
-package com.rodriguesalex.marvelapp.features.home.domain
+package com.rodriguesalex.marvelapp.home.domain
 
 import javax.inject.Inject
 

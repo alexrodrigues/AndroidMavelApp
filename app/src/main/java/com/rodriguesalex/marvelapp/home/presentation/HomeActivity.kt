@@ -1,4 +1,4 @@
-package com.rodriguesalex.marvelapp.features.home.presentation
+package com.rodriguesalex.marvelapp.home.presentation
 
 import android.os.Bundle
 import android.widget.Toast

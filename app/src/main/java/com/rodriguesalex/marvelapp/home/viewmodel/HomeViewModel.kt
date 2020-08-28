@@ -1,4 +1,4 @@
-package com.rodriguesalex.marvelapp.features.home.viewmodel
+package com.rodriguesalex.marvelapp.home.viewmodel
 
 import com.rodriguesalex.commoms.base.BaseViewModel
 import javax.inject.Inject
