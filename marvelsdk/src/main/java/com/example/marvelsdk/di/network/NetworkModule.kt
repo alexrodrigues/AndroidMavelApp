@@ -1,7 +1,7 @@
 package com.example.marvelsdk.di.network
 
 import com.example.marvelsdk.characters.service.CharacterService
-import com.example.marvelsdk.di.interceptor.MarvelInterceptor
+import com.example.marvelsdk.di.network.interceptor.MarvelInterceptor
 import dagger.Module
 import dagger.Provides
 import java.util.concurrent.TimeUnit
