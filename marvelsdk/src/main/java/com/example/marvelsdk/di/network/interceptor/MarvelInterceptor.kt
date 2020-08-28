@@ -1,4 +1,4 @@
-package com.example.marvelsdk.di.interceptor
+package com.example.marvelsdk.di.network.interceptor
 
 import com.example.marvelsdk.security.MarvelSecurity
 import com.example.marvelsdk.security.MarvelSecurity.Companion.PUBLIC_KEY
@@ -10,9 +10,9 @@ class MarvelInterceptor : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
 
-        val tempRequest = chain.request()
+        val request = chain.request()
 
-        val url = tempRequest.url()
+        val url = request.url()
             .newBuilder()
             .apply {
                 addQueryParameter("apikey", PUBLIC_KEY)
@@ -20,10 +20,7 @@ class MarvelInterceptor : Interceptor {
                 addQueryParameter("hash", MarvelSecurity.hash())
             }
             .build()
-
-        val newBuilder = tempRequest.newBuilder().url(url)
-        val finalRequsst = newBuilder.build()
-
-        return chain.proceed(finalRequsst)
+        
+        return chain.proceed(request.newBuilder().url(url).build())
     }
 }
