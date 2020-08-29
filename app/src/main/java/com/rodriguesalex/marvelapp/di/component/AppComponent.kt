@@ -1,12 +1,11 @@
 package com.rodriguesalex.marvelapp.di.component
 
 import android.app.Application
+import com.rodriguesalex.commoms.di.ViewModelModule
 import com.rodriguesalex.marvelapp.MarvelApplication
 import com.rodriguesalex.marvelapp.di.module.ActivityBuilderModule
 import com.rodriguesalex.marvelapp.di.module.AppModule
-import com.rodriguesalex.marvelapp.di.module.FragmentBuilderModule
 import com.rodriguesalex.marvelsdk.di.MarvelSdkModule
-import com.rodriguesalex.commoms.di.ViewModelModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -17,9 +16,8 @@ import javax.inject.Singleton
 @Component(modules = [
     AndroidSupportInjectionModule::class,
     AppModule::class,
-    ActivityBuilderModule::class,
-    FragmentBuilderModule::class,
     ViewModelModule::class,
+    ActivityBuilderModule::class,
     MarvelSdkModule::class
 ])
 interface AppComponent : AndroidInjector<MarvelApplication> {

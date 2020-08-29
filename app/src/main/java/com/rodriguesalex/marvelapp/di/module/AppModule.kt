@@ -12,7 +12,9 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun provideResources(application: Application): Resources = application.resources
+    fun provideResources(application: Application): Resources {
+        return application.resources
+    }
 
     @Provides
     @Singleton

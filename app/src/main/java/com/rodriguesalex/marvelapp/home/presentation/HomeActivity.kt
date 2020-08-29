@@ -1,42 +1,30 @@
 package com.rodriguesalex.marvelapp.home.presentation
 
+import android.content.res.Resources
 import android.os.Bundle
-import android.widget.Toast
+import androidx.databinding.DataBindingUtil
+import com.rodriguesalex.commoms.base.BaseActivity
 import com.rodriguesalex.marvelapp.R
-import com.rodriguesalex.marvelsdk.characters.CharactersRepository
-import com.rodriguesalex.commoms.di.AppSchedulers
-import dagger.android.support.DaggerAppCompatActivity
-import io.reactivex.disposables.CompositeDisposable
+import com.rodriguesalex.marvelapp.databinding.ActivityHomeBinding
+import com.rodriguesalex.marvelapp.home.viewmodel.HomeViewModel
 import javax.inject.Inject
 
-class HomeActivity : DaggerAppCompatActivity() {
+class HomeActivity : BaseActivity() {
 
     @Inject
-    lateinit var repository: CharactersRepository
+    lateinit var resources3: Resources
 
-    @Inject
-    lateinit var appSchedulers: AppSchedulers
-
-    private val compositeDisposable = CompositeDisposable()
+    private lateinit var binding: ActivityHomeBinding
+    private val viewModel by lazy { appViewModel<HomeViewModel>() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
 
-        compositeDisposable.add(
-            repository.fetchCharacters()
-                .observeOn(appSchedulers.main)
-                .subscribeOn(appSchedulers.io)
-                .subscribe({
-                    Toast.makeText(this, it.toString(), Toast.LENGTH_LONG).show()
-                }, {
-                    Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
-                })
-        )
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_home)
+
+        binding.lifecycleOwner = this
+        binding.vm = viewModel
+
     }
 
-    override fun onPause() {
-        super.onPause()
-        compositeDisposable.dispose()
-    }
 }
