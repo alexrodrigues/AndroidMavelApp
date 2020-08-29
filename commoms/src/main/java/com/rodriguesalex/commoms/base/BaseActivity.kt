@@ -11,6 +11,8 @@ open class BaseActivity : DaggerAppCompatActivity() {
     lateinit var factory: ViewModelProvider.Factory
 
     inline fun <reified VM : BaseViewModel> appViewModel(): VM {
-        return ViewModelProviders.of(this, factory).get(VM::class.java)
+        val viewModel = ViewModelProviders.of(this, factory).get(VM::class.java)
+        lifecycle.addObserver(viewModel)
+        return viewModel
     }
 }

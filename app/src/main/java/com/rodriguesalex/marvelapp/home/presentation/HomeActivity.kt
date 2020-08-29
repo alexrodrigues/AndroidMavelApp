@@ -1,13 +1,13 @@
 package com.rodriguesalex.marvelapp.home.presentation
 
-import android.content.res.Resources
 import android.os.Bundle
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.rodriguesalex.commoms.base.BaseActivity
 import com.rodriguesalex.marvelapp.R
 import com.rodriguesalex.marvelapp.databinding.ActivityHomeBinding
+import com.rodriguesalex.marvelapp.home.presentation.adapters.HomeAdapter
 import com.rodriguesalex.marvelapp.home.viewmodel.HomeViewModel
 import com.rodriguesalex.marvelapp.home.viewmodel.HomeViewModelState
 
@@ -24,8 +24,6 @@ class HomeActivity : BaseActivity() {
             vm = viewModel
         }
 
-        lifecycle.addObserver(viewModel)
-
         setupObservers()
     }
 
@@ -33,7 +31,10 @@ class HomeActivity : BaseActivity() {
         viewModel.state.observe(this, Observer { state ->
             when (state) {
                 is HomeViewModelState.Loaded ->
-                    Toast.makeText(this, state.list.toString(), Toast.LENGTH_LONG).show()
+                    binding.rvHome.apply {
+                        layoutManager = LinearLayoutManager(this@HomeActivity)
+                        adapter = HomeAdapter(state.list)
+                    }
             }
         })
     }
