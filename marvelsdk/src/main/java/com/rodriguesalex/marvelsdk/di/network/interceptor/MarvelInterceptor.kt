@@ -20,7 +20,7 @@ class MarvelInterceptor : Interceptor {
                 addQueryParameter("hash", MarvelSecurity.hash())
             }
             .build()
-        
+
         return chain.proceed(request.newBuilder().url(url).build())
     }
 }
