@@ -10,12 +10,8 @@ import com.rodriguesalex.marvelapp.R
 import com.rodriguesalex.marvelapp.databinding.ActivityHomeBinding
 import com.rodriguesalex.marvelapp.home.viewmodel.HomeViewModel
 import com.rodriguesalex.marvelapp.home.viewmodel.HomeViewModelState
-import javax.inject.Inject
 
 class HomeActivity : BaseActivity() {
-
-    @Inject
-    lateinit var resources3: Resources
 
     private lateinit var binding: ActivityHomeBinding
     private val viewModel by lazy { appViewModel<HomeViewModel>() }
@@ -23,10 +19,12 @@ class HomeActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_home)
+        binding = DataBindingUtil.setContentView<ActivityHomeBinding>(this, R.layout.activity_home).apply {
+            lifecycleOwner = this@HomeActivity
+            vm = viewModel
+        }
 
-        binding.lifecycleOwner = this
-        binding.vm = viewModel
+        lifecycle.addObserver(viewModel)
 
         setupObservers()
     }

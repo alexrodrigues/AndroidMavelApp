@@ -24,6 +24,7 @@ class HomeViewModel @Inject constructor(
                 .subscribeOn(appSchedulers.io)
                 .observeOn(appSchedulers.main)
                 .subscribe({
+                    state.value = HomeViewModelState.Loaded(it)
                 }, {
                     it.printStackTrace()
                 })
