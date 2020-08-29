@@ -12,6 +12,7 @@ class HomeViewModel @Inject constructor(
 ) : BaseViewModel() {
 
     val state = MutableLiveData<HomeViewModelState>()
+    val progressIsVisible = MutableLiveData<Boolean>()
 
     override fun onCreate() {
 
@@ -23,6 +24,12 @@ class HomeViewModel @Inject constructor(
             interactor.fetchCharacters()
                 .subscribeOn(appSchedulers.io)
                 .observeOn(appSchedulers.main)
+                .doOnSubscribe {
+                    progressIsVisible.value = true
+                }
+                .doFinally {
+                    progressIsVisible.value = false
+                }
                 .subscribe({
                     state.value = HomeViewModelState.Loaded(it)
                 }, {
