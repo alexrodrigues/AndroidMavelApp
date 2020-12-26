@@ -3,6 +3,7 @@ package com.rodriguesalex.marvelapp.home.viewmodel
 import androidx.lifecycle.MutableLiveData
 import com.rodriguesalex.commoms.base.BaseViewModel
 import com.rodriguesalex.commoms.di.AppSchedulers
+import com.rodriguesalex.marvelapp.home.data.HomeCharacterVO
 import com.rodriguesalex.marvelapp.home.domain.HomeInteractor
 import javax.inject.Inject
 
@@ -12,6 +13,7 @@ class HomeViewModel @Inject constructor(
 ) : BaseViewModel() {
 
     val state = MutableLiveData<HomeViewModelState>()
+    val command = MutableLiveData<>
     val progressIsVisible = MutableLiveData<Boolean>()
 
     override fun onCreate() {
@@ -36,5 +38,9 @@ class HomeViewModel @Inject constructor(
                     it.printStackTrace()
                 })
         )
+    }
+
+    fun onItemClick(vo: HomeCharacterVO) {
+
     }
 }

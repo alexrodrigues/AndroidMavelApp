@@ -33,7 +33,10 @@ class HomeActivity : BaseActivity() {
                 is HomeViewModelState.Loaded ->
                     binding.rvHome.apply {
                         layoutManager = LinearLayoutManager(this@HomeActivity)
-                        adapter = HomeAdapter(state.list)
+                        with(HomeAdapter(state.list)) {
+                            adapter = this
+                            onItemClickListener = { viewModel.onItemClick(it) }
+                        }
                     }
             }
         })

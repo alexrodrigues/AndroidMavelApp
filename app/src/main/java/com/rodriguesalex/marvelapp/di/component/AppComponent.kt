@@ -3,8 +3,8 @@ package com.rodriguesalex.marvelapp.di.component
 import android.app.Application
 import com.rodriguesalex.commoms.di.ViewModelModule
 import com.rodriguesalex.marvelapp.MarvelApplication
-import com.rodriguesalex.marvelapp.di.module.ActivityBuilderModule
 import com.rodriguesalex.marvelapp.di.module.AppModule
+import com.rodriguesalex.marvelapp.di.module.FeatureModule
 import com.rodriguesalex.marvelsdk.di.MarvelSdkModule
 import dagger.BindsInstance
 import dagger.Component
@@ -17,7 +17,7 @@ import javax.inject.Singleton
     AndroidSupportInjectionModule::class,
     AppModule::class,
     ViewModelModule::class,
-    ActivityBuilderModule::class,
+    FeatureModule::class,
     MarvelSdkModule::class
 ])
 interface AppComponent : AndroidInjector<MarvelApplication> {

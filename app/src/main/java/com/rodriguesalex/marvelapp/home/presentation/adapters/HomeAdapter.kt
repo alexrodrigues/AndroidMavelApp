@@ -13,9 +13,13 @@ class HomeAdapter(
     private val list: List<HomeCharacterVO>
 ) : RecyclerView.Adapter<HomeAdapter.HomeItemViewHolder>() {
 
+    var onItemClickListener: ((HomeCharacterVO) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeItemViewHolder =
         HomeItemViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.view_home_item, parent, false)
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.view_home_item, parent, false),
+            onItemClickListener
         )
 
     override fun onBindViewHolder(holder: HomeItemViewHolder, position: Int) {
@@ -25,7 +29,8 @@ class HomeAdapter(
     override fun getItemCount(): Int = list.size
 
     class HomeItemViewHolder(
-        private val view: View
+        private val view: View,
+        private val onItemClickListener: ((HomeCharacterVO) -> Unit)?
     ) : RecyclerView.ViewHolder(view) {
 
         fun bind(vo: HomeCharacterVO) {
@@ -40,6 +45,10 @@ class HomeAdapter(
                     vo.description
                 else
                     view.resources.getString(R.string.lorem_ipsum)
+
+            view.setOnClickListener {
+                onItemClickListener?.invoke(vo)
+            }
         }
     }
 }
