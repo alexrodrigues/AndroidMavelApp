@@ -7,8 +7,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.rodriguesalex.commoms.base.BaseActivity
 import com.rodriguesalex.marvelapp.R
 import com.rodriguesalex.marvelapp.databinding.ActivityHomeBinding
+import com.rodriguesalex.marvelapp.detail.presentation.DetailActivity
+import com.rodriguesalex.marvelapp.home.data.HomeCharacterVO
 import com.rodriguesalex.marvelapp.home.presentation.adapters.HomeAdapter
 import com.rodriguesalex.marvelapp.home.viewmodel.HomeViewModel
+import com.rodriguesalex.marvelapp.home.viewmodel.HomeViewModelCommand
 import com.rodriguesalex.marvelapp.home.viewmodel.HomeViewModelState
 
 class HomeActivity : BaseActivity() {
@@ -31,14 +34,31 @@ class HomeActivity : BaseActivity() {
         viewModel.state.observe(this, Observer { state ->
             when (state) {
                 is HomeViewModelState.Loaded ->
-                    binding.rvHome.apply {
-                        layoutManager = LinearLayoutManager(this@HomeActivity)
-                        with(HomeAdapter(state.list)) {
-                            adapter = this
-                            onItemClickListener = { viewModel.onItemClick(it) }
-                        }
-                    }
+                    setupRecyclerView(state.list)
+
+                HomeViewModelState.Error -> {
+                    // TODO: Implement error
+                }
             }
         })
+
+        viewModel.command.observe(this, Observer {  command ->
+            when(command) {
+                is HomeViewModelCommand.OpenDetail ->
+                    startActivity(
+                        DetailActivity.intent(this, command.vo)
+                    )
+            }
+        })
+    }
+
+    private fun setupRecyclerView(list: List<HomeCharacterVO>) {
+        with(binding.rvHome) {
+            layoutManager = LinearLayoutManager(this@HomeActivity)
+            with(HomeAdapter(list)) {
+                adapter = this
+                onItemClickListener = { viewModel.onItemClick(it) }
+            }
+        }
     }
 }

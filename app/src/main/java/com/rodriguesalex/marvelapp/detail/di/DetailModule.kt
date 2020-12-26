@@ -41,8 +41,8 @@ abstract class DetailModule {
 
     @Module
     companion object {
+        @ActivityScope
         @JvmStatic
-        @Singleton
         @Provides
         fun provideHomeVo(activity: DetailActivity): HomeCharacterVO? =
             activity.intent.getParcelableExtra(DetailActivity.BUNDLE_VO)
