@@ -25,10 +25,7 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginRight="@dimen/space_8"
-            android:layout_marginEnd="@dimen/space_8"
-            android:layout_marginTop="@dimen/space_8"
-            android:layout_marginBottom="@dimen/space_8"
+            android:padding="@dimen/space_8"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -40,15 +37,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                style="@style/TextAppearance.AppCompat.Headline"
+                style="@style/RodriguesAlex.MarvelApp.Heading"
                 tools:text="Spider man" />
 
             <TextView
                 android:id="@+id/tvHomeDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:ellipsize="end"
+                style="@style/RodriguesAlex.MarvelApp.Description"
                 tools:text="@string/lorem_ipsum" />
 
         </LinearLayout>
