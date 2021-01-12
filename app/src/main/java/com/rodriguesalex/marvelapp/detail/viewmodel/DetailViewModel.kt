@@ -15,7 +15,9 @@ class DetailViewModel @Inject constructor(
 
     override fun onCreate() {
         super.onCreate()
-        vo?.let { state.value = DetailViewModelState.Loaded(it) }
+        vo?.let {
+            state.value = DetailViewModelState.Loaded(it)
+        }
     }
 
 }

@@ -1,3 +1,4 @@
+include ':components'
 include ':commoms'
 include ':marvelsdk'
 include ':app'

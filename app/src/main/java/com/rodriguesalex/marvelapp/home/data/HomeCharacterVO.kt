@@ -8,5 +8,6 @@ data class HomeCharacterVO(
     val id: String,
     val name: String,
     val description: String,
-    val urlImage: String
+    val urlImage: String,
+    val details: CharacterDetailsVO? = null
 ): Parcelable
