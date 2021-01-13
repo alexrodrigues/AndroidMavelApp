@@ -1,4 +1,4 @@
-package br.com.rodriguesalex.components.section
+package br.com.rodriguesalex.component.section
 
 class SectionView {
 }
