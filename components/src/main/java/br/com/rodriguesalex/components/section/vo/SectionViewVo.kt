@@ -1,5 +1,7 @@
 package br.com.rodriguesalex.components.section.vo
 
+import androidx.annotation.StringRes
+
 data class SectionViewVo(
-    val sectionTitle: String,
+    @StringRes val sectionTitle: Int,
     val items: List<SectionItemViewVo>)

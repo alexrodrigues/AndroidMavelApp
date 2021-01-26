@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import com.rodriguesalex.commoms.base.BaseActivity
 import com.rodriguesalex.marvelapp.R
 import com.rodriguesalex.marvelapp.databinding.ActivityDetailBinding
+import com.rodriguesalex.marvelapp.detail.data.DetailVo
 import com.rodriguesalex.marvelapp.detail.viewmodel.DetailViewModel
 import com.rodriguesalex.marvelapp.detail.viewmodel.DetailViewModelState
 import com.rodriguesalex.marvelapp.home.data.HomeCharacterVO
@@ -39,11 +40,13 @@ class DetailActivity : BaseActivity() {
         })
     }
 
-    private fun setupView(vo: HomeCharacterVO) {
-        Picasso.get().load(vo.urlImage).into(binding.expandedImage)
+    private fun setupView(vo: DetailVo) {
+        Picasso.get().load(vo.imageUrl).into(binding.expandedImage)
 
-        binding.toolbar.title = vo.name
+        binding.toolbar.title = vo.title
         setSupportActionBar(binding.toolbar)
+
+        binding.sectionView.bind(vo.details)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

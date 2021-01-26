@@ -53,7 +53,10 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <!--- Recycler view -->
+        <br.com.rodriguesalex.component.section.SectionView
+            android:id="@+id/sectionView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

@@ -3,6 +3,11 @@
     <string name="title_activity_home">Characters</string>
     <string name="title_favorites">Favorites</string>
 
+
+    <string name="section_comics">Comics</string>
+    <string name="section_series">Series</string>
+    <string name="section_stories">Stories</string>
+
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porttitor leo a diam sollicitudin tempor id. Vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare. Lectus sit amet est placerat in. Fermentum dui faucibus in ornare quam viverra orci sagittis eu. Ut placerat orci nulla pellentesque dignissim enim. Nunc faucibus a pellentesque sit amet porttitor. Fermentum iaculis eu non diam phasellus vestibulum lorem sed. Tempus egestas sed sed risus pretium quam vulputate. Mauris augue neque gravida in. Mi proin sed libero enim sed faucibus turpis in. Mi tempus imperdiet nulla malesuada pellentesque elit eget. Amet luctus venenatis lectus magna. Lectus magna fringilla urna porttitor. Fames ac turpis egestas sed.</string>
 
 </resources>

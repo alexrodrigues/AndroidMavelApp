@@ -37,17 +37,15 @@ class SectionView @JvmOverloads constructor(
     }
 
     fun bind(vo: SectionViewVo) {
-        tvSectionTitle.text = vo.sectionTitle
+        tvSectionTitle.text = resources.getString(vo.sectionTitle)
 
         val linearLayout = LinearLayoutManager(context).also {
             it.orientation = LinearLayoutManager.HORIZONTAL
         }
 
-        val sectionAdapter = SectionViewAdapter(vo.items)
-
         rvSectionItems.apply {
             layoutManager = linearLayout
-            adapter = sectionAdapter
+            adapter = SectionViewAdapter(vo.items)
         }
     }
 }
