@@ -1,7 +1,7 @@
 package com.rodriguesalex.marvelapp.detail.domain.mapper
 
-import br.com.rodriguesalex.components.section.vo.SectionItemViewVo
-import br.com.rodriguesalex.components.section.vo.SectionViewVo
+import br.com.rodriguesalex.components.sectionlistview.sectionview.vo.SectionItemViewVo
+import br.com.rodriguesalex.components.sectionlistview.sectionview.vo.SectionViewVo
 import com.rodriguesalex.marvelapp.R
 import com.rodriguesalex.marvelapp.detail.data.DetailVo
 import com.rodriguesalex.marvelapp.home.data.HomeCharacterVO

@@ -20,6 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/app_bar_height"
             android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
             android:theme="@style/AppTheme.AppBarOverlay">
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
@@ -53,7 +54,7 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <br.com.rodriguesalex.component.section.SectionView
+        <br.com.rodriguesalex.components.sectionlistview.SectionListView
             android:id="@+id/sectionView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />

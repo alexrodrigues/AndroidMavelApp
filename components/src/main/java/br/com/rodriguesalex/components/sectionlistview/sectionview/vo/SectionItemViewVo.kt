@@ -1,4 +1,4 @@
-package br.com.rodriguesalex.components.section.vo
+package br.com.rodriguesalex.components.sectionlistview.sectionview.vo
 
 data class SectionItemViewVo (
     val title: String,

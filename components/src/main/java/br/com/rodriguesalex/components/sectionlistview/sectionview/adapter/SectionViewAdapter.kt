@@ -1,11 +1,11 @@
-package br.com.rodriguesalex.components.section.adapter
+package br.com.rodriguesalex.components.sectionlistview.sectionview.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.com.rodriguesalex.components.R
-import br.com.rodriguesalex.components.section.vo.SectionItemViewVo
+import br.com.rodriguesalex.components.sectionlistview.sectionview.vo.SectionItemViewVo
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.view_component_section_item.view.*
 
@@ -25,7 +25,7 @@ class SectionViewAdapter(
 
     override fun getItemCount(): Int = vos.size
 
-    class SectionViewHolder(itemView: View):  RecyclerView.ViewHolder(itemView) {
+    inner class SectionViewHolder(itemView: View):  RecyclerView.ViewHolder(itemView) {
 
         fun bind(vo: SectionItemViewVo) {
             Picasso.get().load(vo.imageUrl).into(itemView.ivItemImage)

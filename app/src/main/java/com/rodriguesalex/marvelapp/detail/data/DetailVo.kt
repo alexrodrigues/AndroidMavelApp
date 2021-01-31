@@ -1,6 +1,6 @@
 package com.rodriguesalex.marvelapp.detail.data
 
-import br.com.rodriguesalex.components.section.vo.SectionViewVo
+import br.com.rodriguesalex.components.sectionlistview.sectionview.vo.SectionViewVo
 
 data class DetailVo (
     val title: String,

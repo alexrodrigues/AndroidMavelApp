@@ -1,4 +1,4 @@
-package br.com.rodriguesalex.component.section
+package br.com.rodriguesalex.components.sectionlistview.sectionview
 
 import android.content.Context
 import android.util.AttributeSet
@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.rodriguesalex.components.R
-import br.com.rodriguesalex.components.section.adapter.SectionViewAdapter
-import br.com.rodriguesalex.components.section.vo.SectionViewVo
+import br.com.rodriguesalex.components.sectionlistview.sectionview.adapter.SectionViewAdapter
+import br.com.rodriguesalex.components.sectionlistview.sectionview.vo.SectionViewVo
 import kotlinx.android.synthetic.main.view_component_section.view.*
 
 class SectionView @JvmOverloads constructor(

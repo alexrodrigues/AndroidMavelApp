@@ -2,8 +2,6 @@ package com.rodriguesalex.marvelapp.detail.di
 
 import androidx.lifecycle.ViewModel
 import com.rodriguesalex.commoms.di.ViewModelKey
-import com.rodriguesalex.marvelapp.detail.data.DetailRepository
-import com.rodriguesalex.marvelapp.detail.data.DetailRepositoryImpl
 import com.rodriguesalex.marvelapp.detail.domain.DetailInteractor
 import com.rodriguesalex.marvelapp.detail.domain.DetailInteractorImpl
 import com.rodriguesalex.marvelapp.detail.presentation.DetailActivity
@@ -35,9 +33,6 @@ abstract class DetailModule {
 
     @Binds
     abstract fun provideInteractor(interactor: DetailInteractorImpl): DetailInteractor
-
-    @Binds
-    abstract fun provideRepository(repository: DetailRepositoryImpl): DetailRepository
 
     @Module
     companion object {
