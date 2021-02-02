@@ -14,7 +14,12 @@ class SectionListViewAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SectionListViewHolder =
         SectionListViewHolder(
-            SectionView(parent.context)
+            SectionView(parent.context).apply {
+                layoutParams = ViewGroup.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+                )
+            }
         )
 
     override fun onBindViewHolder(holder: SectionListViewHolder, position: Int) =
