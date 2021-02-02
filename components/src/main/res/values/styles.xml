@@ -10,4 +10,9 @@
         <item name="android:textColor">@color/black_80</item>
     </style>
 
+    <style name="RodriguesAlex.MarvelApp.ItemTitle">
+        <item name="android:textSize">@dimen/text_10</item>
+        <item name="android:textColor">@color/black_80</item>
+    </style>
+
 </resources>
